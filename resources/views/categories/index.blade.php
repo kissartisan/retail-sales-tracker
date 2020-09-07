@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="header mb-2">
+    <div class="header mb-2 d-flex justify-content-between align-items-center">
         <h1>Categories</h1>
         <a class="btn btn-primary" href="{{ route('categories.create') }}">New Category</a>
     </div>
 
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
               <th scope="col">ID</th>
