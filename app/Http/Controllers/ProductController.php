@@ -66,7 +66,9 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::pluck('name', 'id');
+
+        return view('products.edit', compact('product', 'categories'));
     }
 
     /**
@@ -76,9 +78,11 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
-        //
+        $product->update($request->validated());
+
+        return redirect(route('products.index'));
     }
 
     /**
