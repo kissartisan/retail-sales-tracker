@@ -38,7 +38,7 @@ class CategoryController extends Controller
      */
     public function store(CategoryRequest $request)
     {
-        $task = Category::create($request->validated());
+        Category::create($request->validated());
 
         return redirect(route('categories.index'));
     }

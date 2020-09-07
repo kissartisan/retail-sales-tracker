@@ -26,19 +26,19 @@
 </div>
 
 <div class="form-group">
-    <label for="original_price">Original Price</label>
-    <input type="text" name="original_price" value="{{ $product->original_price }}"
-        class="form-control @error('original_price') is-invalid @enderror" required>
-    @error('original_price')
+    <label for="supplier_price">Supplier Price</label>
+    <input type="text" name="supplier_price" value="{{ $product->supplier_price }}"
+        class="form-control @error('supplier_price') is-invalid @enderror" required>
+    @error('supplier_price')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 </div>
 
 <div class="form-group">
-    <label for="sale_price">Sale Price</label>
-    <input type="text" name="sale_price" value="{{ $product->sale_price }}"
-        class="form-control @error('sale_price') is-invalid @enderror" required>
-    @error('sale_price')
+    <label for="selling_price">Selling Price</label>
+    <input type="text" name="selling_price" value="{{ $product->selling_price }}"
+        class="form-control @error('selling_price') is-invalid @enderror" required>
+    @error('selling_price')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
 </div>
