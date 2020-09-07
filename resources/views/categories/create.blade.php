@@ -1,12 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2 class="title">Create Task</h1>
+    <h2 class="title">Create Category</h1>
 
-    <form action="{{ route('tasks.store') }}" method="POST">
-        @include('tasks.form', [
-            'task' => new App\Task,
-            'projects' => $projects,
+    <form action="{{ route('categories.store') }}" method="POST">
+        @include('categories.form', [
+            'category' => new App\Models\Category,
             'buttonText' => 'Create'
         ])
     </form>
