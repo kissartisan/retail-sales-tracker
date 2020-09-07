@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Barangay;
 use Illuminate\Http\Request;
+use App\Http\Requests\BarangayRequest;
 
 class BarangayController extends Controller
 {
@@ -14,7 +15,9 @@ class BarangayController extends Controller
      */
     public function index()
     {
-        //
+        $barangays = Barangay::paginate(10);
+
+        return view('barangays.index', compact('barangays'));
     }
 
     /**
@@ -24,7 +27,9 @@ class BarangayController extends Controller
      */
     public function create()
     {
-        //
+        $barangay = new Barangay;
+
+        return view('barangays.create', compact('barangay'));
     }
 
     /**
@@ -33,9 +38,11 @@ class BarangayController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BarangayRequest $request)
     {
-        //
+        Barangay::create($request->validated());
+
+        return redirect(route('barangays.index'));
     }
 
     /**
@@ -57,7 +64,7 @@ class BarangayController extends Controller
      */
     public function edit(Barangay $barangay)
     {
-        //
+        return view('barangays.edit', compact('barangay'));
     }
 
     /**
@@ -67,9 +74,11 @@ class BarangayController extends Controller
      * @param  \App\Models\Barangay  $barangay
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Barangay $barangay)
+    public function update(BarangayRequest $request, Barangay $barangay)
     {
-        //
+        $barangay->update($request->validated());
+
+        return redirect(route('barangays.index'));
     }
 
     /**

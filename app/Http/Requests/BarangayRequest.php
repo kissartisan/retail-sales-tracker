@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryRequest extends FormRequest
+class BarangayRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,8 @@ class CategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|unique:categories,name,' . $this->category->id,
+            'name' => 'required|unique:barangays,name,' . optional($this->barangay)->id,
+            'delivery_fee' => 'numeric|min:0',
         ];
     }
 }

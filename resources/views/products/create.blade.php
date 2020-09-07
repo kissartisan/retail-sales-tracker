@@ -5,8 +5,6 @@
 
     <form action="{{ route('products.store') }}" method="POST">
         @include('products.form', [
-        'product' => $product,
-        'categories' => $categories,
         'buttonText' => 'Create'
         ])
     </form>

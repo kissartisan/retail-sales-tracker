@@ -39,6 +39,9 @@
                         <li>
                             <a class="nav-link" href="{{ route('products.index') }}">Products</a>
                         </li>
+                        <li>
+                            <a class="nav-link" href="{{ route('barangays.index') }}">Barangays</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
