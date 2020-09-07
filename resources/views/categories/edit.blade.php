@@ -1,13 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2 class="title">Edit task: {{ $task->name }}</h1>
+    <h2 class="title">Edit category: {{ $category->name }}</h1>
 
-    <form action="{{ route('tasks.update', $task->getKey()) }}" method="POST">
+    <form action="{{ route('categories.update', $category->getKey()) }}" method="POST">
         @method('PATCH')
 
-        @include('tasks.form', [
-            'projects' => $projects,
+        @include('categories.form', [
             'buttonText' => 'Update'
         ])
     </form>
