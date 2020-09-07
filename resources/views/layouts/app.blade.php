@@ -37,10 +37,10 @@
                             <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{ route('products.index') }}">Products</a>
+                            <a class="nav-link" href="{{ route('barangays.index') }}">Barangays</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{ route('barangays.index') }}">Barangays</a>
+                            <a class="nav-link" href="{{ route('products.index') }}">Products</a>
                         </li>
                     </ul>
 
