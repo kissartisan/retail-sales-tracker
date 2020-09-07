@@ -19,4 +19,5 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('categories', CategoryController::class);
 Route::get('/home', 'HomeController@index')->name('home');
