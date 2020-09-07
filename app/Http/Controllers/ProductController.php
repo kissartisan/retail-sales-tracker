@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -26,7 +27,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $product = new Product;
+        $categories = Category::pluck('name', 'id');
+
+        return view('products.create', compact('product', 'categories'));
     }
 
     /**
