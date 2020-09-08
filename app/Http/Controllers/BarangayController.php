@@ -89,6 +89,8 @@ class BarangayController extends Controller
      */
     public function destroy(Barangay $barangay)
     {
-        //
+        $barangay->delete();
+
+        return redirect(route('barangays.index'));
     }
 }
