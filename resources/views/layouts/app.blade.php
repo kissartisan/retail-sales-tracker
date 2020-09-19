@@ -32,17 +32,22 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <li>
-                            <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="{{ route('barangays.index') }}">Barangays</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="{{ route('products.index') }}">Products</a>
-                        </li>
-                    </ul>
+                    @if(auth()->user())
+                        <ul class="navbar-nav mr-auto">
+                            <li>
+                                <a class="nav-link" href="{{ route('categories.index') }}">Categories</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('barangays.index') }}">Barangays</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('products.index') }}">Products</a>
+                            </li>
+                            <li>
+                                <a class="nav-link" href="{{ route('products.index') }}">Sales</a>
+                            </li>
+                        </ul>
+                    @endif
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
